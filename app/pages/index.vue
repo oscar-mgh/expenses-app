@@ -1,5 +1,31 @@
 <script setup lang="ts">
+import { onMounted, ref } from "vue";
+import ExpenseTable from "~/components/expenses/ExpenseTable.vue";
+import { useExpenses } from "~/composables/useExpenses";
+
+const { expenses, meta, loading, fetchExpenses } = useExpenses();
+
+const currentPage = ref(1);
+const selectedCategory = ref("");
+
+const loadExpenses = async () => {
+  await fetchExpenses({
+    page: currentPage.value,
+    limit: 10,
+    category: selectedCategory.value || undefined,
+  });
+};
+
 const categoryInput = ref("");
+
+const handlePageChange = (page: number) => {
+  currentPage.value = page;
+  loadExpenses();
+};
+
+onMounted(() => {
+  loadExpenses();
+});
 </script>
 
 <template>
@@ -21,5 +47,13 @@ const categoryInput = ref("");
         <b>Nuevo Gasto</b>
       </UButton>
     </div>
+
+    <ExpenseTable
+      :expenses="expenses"
+      :meta="meta"
+      :loading="loading"
+      @page-change="handlePageChange"
+      @select="(expense) => navigateTo(`/expenses/${expense.id}`)"
+    />
   </div>
 </template>
