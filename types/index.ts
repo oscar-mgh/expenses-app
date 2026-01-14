@@ -15,3 +15,9 @@ export interface PaginatedResponse<T> {
   data: T[];
   meta: PaginationMeta;
 }
+
+export interface ExpenseFormValues {
+  description: string;
+  category: string;
+  amount: string;
+}
