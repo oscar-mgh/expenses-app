@@ -139,7 +139,7 @@ onUnmounted(() => {
     <div
       class="flex items-center justify-between gap-4 pt-4 border-t border-neutral-200 dark:border-neutral-800"
     >
-      <UButton variant="subtle" color="neutral" @click="emit('cancel')">
+      <UButton variant="subtle" color="neutral" class="cursor-pointer" @click="emit('cancel')">
         Cancelar
       </UButton>
 
@@ -151,6 +151,7 @@ onUnmounted(() => {
           :disabled="loading"
           icon="i-heroicons-trash"
           @click="handleDeleteClick"
+          class="cursor-pointer"
         >
           <b>{{ isConfirming ? "Confirmar" : "Eliminar" }}</b>
         </UButton>
@@ -160,6 +161,7 @@ onUnmounted(() => {
           color="success"
           :loading="loading"
           icon="i-heroicons-check"
+          class="cursor-pointer"
         >
           Guardar
         </UButton>
