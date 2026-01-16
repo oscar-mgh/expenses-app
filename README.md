@@ -1,60 +1,40 @@
-# Nuxt Starter Template
+# Gestión de Gastos
 
-[![Nuxt UI](https://img.shields.io/badge/Made%20with-Nuxt%20UI-00DC82?logo=nuxt&labelColor=020420)](https://ui.nuxt.com)
+Aplicación moderna para gestionar y administrar tus gastos de forma eficiente, construida con Nuxt 4 y Nuxt UI.
 
-Use this template to get started with [Nuxt UI](https://ui.nuxt.com) quickly.
+## 🚀 Características
 
-- [Live demo](https://starter-template.nuxt.dev/)
-- [Documentation](https://ui.nuxt.com/docs/getting-started/installation/nuxt)
+- **Gestión de Gastos:** Crea, visualiza y administra tus gastos.
+- **Formularios Validados:** Validación de datos utilizando Zod y Vee-Validate.
+- **Interfaz Moderna:** Diseño limpio y responsivo utilizando Nuxt UI (@nuxt/ui).
+- **Consumo de API:** Integración con backend para persistencia de datos.
 
-<a href="https://starter-template.nuxt.dev/" target="_blank">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png">
-    <img alt="Nuxt Starter Template" src="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png">
-  </picture>
-</a>
+## 🛠️ Tecnologías
 
-> The starter template for Vue is on https://github.com/nuxt-ui-templates/starter-vue.
+- **Framework:** [Nuxt 4](https://nuxt.com/)
+- **UI Kit:** [Nuxt UI](https://ui.nuxt.com/)
+- **Validación:** [Zod](https://zod.dev/) & [Vee-Validate](https://vee-validate.logaretm.com/)
+- **Estilo:** Tailwind CSS (via Nuxt UI)
 
-## Quick Start
+## 📦 Instalación
 
-```bash [Terminal]
-npm create nuxt@latest -- -t github:nuxt-ui-templates/starter
-```
-
-## Deploy your own
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-name=starter&repository-url=https%3A%2F%2Fgithub.com%2Fnuxt-ui-templates%2Fstarter&demo-image=https%3A%2F%2Fui.nuxt.com%2Fassets%2Ftemplates%2Fnuxt%2Fstarter-dark.png&demo-url=https%3A%2F%2Fstarter-template.nuxt.dev%2F&demo-title=Nuxt%20Starter%20Template&demo-description=A%20minimal%20template%20to%20get%20started%20with%20Nuxt%20UI.)
-
-## Setup
-
-Make sure to install the dependencies:
+Asegúrate de tener [pnpm](https://pnpm.io/) instalado.
 
 ```bash
-pnpm install
+# Instalar dependencias
+npm install
+
+# Iniciar el servidor de desarrollo
+npm run dev
 ```
 
-## Development Server
+## ⚙️ Configuración
 
-Start the development server on `http://localhost:3000`:
+Renombrar el archivo `.env.template` a `.env`.
+
+La aplicación requiere asignar la variable de entorno `NUXT_PUBLIC_API_BASE` con la URL de la API.
 
 ```bash
-pnpm dev
+# Ejemplo
+NUXT_PUBLIC_API_BASE=http://localhost:3000/api/v1
 ```
-
-## Production
-
-Build the application for production:
-
-```bash
-pnpm build
-```
-
-Locally preview production build:
-
-```bash
-pnpm preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
